@@ -6,9 +6,10 @@
     <title>去过 - @听说过没见过</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="生成美观的去过的国家和省份图">
-    <meta name="Keywords" content="去过 国家 省份 图">
+    <meta name="Keywords" content="去过国家">
     <meta name="author" content="me@yuming.ch">
     <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -16,48 +17,34 @@
             <h3>测试(国家列表)</h3>
             <div class="row">
                 <div class="col-lg-6">
+
                     <div class="input-group">
+
                         <input type="text" class="form-control" id="testNoBtn">
+
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
+                    
                             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            </ul>
+                            </ul>                            
                         </div>
-                        <!-- /btn-group -->
+
                     </div>
                 </div>
             </div>
-        </form>
+        <div id="vmap" style="width: 100%; height: 250px;"></div>    
     </div>
+    
+
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="../static/bootstrap-suggest.js"></script>
-    <script type="text/javascript">
+    <script src="../static/bootstrap-suggest.min.js"></script>
+    <script src="../static/quguo.js"></script>
+    <script src="../static/jquery.vmap.js"></script>
+    <script src="../static/jquery.vmap.world.js" charset="utf-8"></script>
 
-    var bsSuggest = $("#testNoBtn").bsSuggest({
-        //url: "/rest/sys/getuserlist?keyword=",
-        url: "http://ac-tyh9mcmk.clouddn.com/01d0c78a79cb0e1f.json",
-        effectiveFields: ["countryName"],
-        searchFields: ["engLower"],
-        /* effectiveFieldsAlias:{userName: "姓名"}, */
-        showBtn: false,
-        idField: "countryId",
-        keyField: "countryName"
-    }).on('onDataRequestSuccess', function (e, result) {
-        console.log('onDataRequestSuccess: ', result);
-    }).on('onSetSelectValue', function (e, keyword) {
-        console.log('onSetSelectValue: ', keyword);
-    }).on('onUnsetSelectValue', function (e) {
-        console.log("onUnsetSelectValue");
-    });
+
 
   
-
-    $("form").submit(function(e) {
-        return false;
-    });
     </script>
 </body>
 
