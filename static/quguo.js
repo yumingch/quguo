@@ -1,23 +1,4 @@
 $(document).ready(function() {
-
-    var bsSuggest = $("#testNoBtn").bsSuggest({
-        url: "http://ac-tyh9mcmk.clouddn.com/f097bc9fc882e7c0.json",
-        effectiveFields: ["c+e"],
-        searchFields: ["eng"],
-        effectiveFieldsAlias:{countryEng: " ", countryChs: " "},
-        showBtn: false,
-        idField: "id",
-        keyField: "chs"
-    }).on('onDataRequestSuccess', function (e, result) {
-
-    }).on('onSetSelectValue', function (e, keyword) {
-        $("h3").append(keyword.id);
-        $("#vmap").vectorMap('set', 'selectedRegions', ['CN'])
-    
-    }).on('onUnsetSelectValue', function (e) {
-
-    });
-
     $('#vmap').vectorMap({ map: 'world_en',
     backgroundColor: 'black',
     borderColor: '#818181',
@@ -25,6 +6,7 @@ $(document).ready(function() {
     borderWidth: 1,
     color: 'grey',
     enableZoom: true,
+    selectedRegions: [],
     hoverColor: '#c9dfaf',
     hoverOpacity: 0.5,
     normalizeFunction: 'linear',
@@ -32,6 +14,22 @@ $(document).ready(function() {
     selectedColor: '#c9dfaf',
     showTooltip: true,
     multiSelectRegion: true,
-     });
+    });
+
+    var bsSuggest = $("#testNoBtn").bsSuggest({
+        url: "http://ac-tyh9mcmk.clouddn.com/f097bc9fc882e7c0.json",
+        effectiveFields: ["c+e"],
+        searchFields: ["eng"],
+        showBtn: false,
+        idField: "id",
+        keyField: "chs"
+    }).on('onSetSelectValue', function (e, keyword) {
+       $('#vmap').vectorMap('select', keyword.id.toLowerCase());
+    }).on('onUnsetSelectValue', function (e) {
+
+    }
+    );
+
+    
 
 })
