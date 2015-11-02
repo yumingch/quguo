@@ -194,11 +194,7 @@
 
       jQuery(params.container).trigger('regionClick.jqvmap', [code, mapData.pathes[code].name]);
       if (!regionClickEvent.isDefaultPrevented()) {
-        if (map.isSelected(code)) {
-          map.deselect(code, targetPath);
-        } else {
-          map.select(code, targetPath);
-        }
+        
       }
     });
 
@@ -937,6 +933,9 @@
     } else if (typeof options === 'string' &&
                typeof map[options] === 'function') {
       return map[options].apply(map, Array.prototype.slice.call(arguments, 1));
+    } 
+    else if (options === 'getS') {
+      return (map.selectedRegions);
     } else {
       jQuery.extend(defaultParams, options);
       defaultParams.container = this;
