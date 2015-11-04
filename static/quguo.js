@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+
     $('#vmap').vectorMap({ map: 'world_en',
     backgroundColor: 'black',
     borderColor: '#818181',
@@ -8,11 +10,11 @@ $(document).ready(function(){
     color: 'grey',
     enableZoom: true,
     selectedRegions: [],
-    hoverColor: '#grey',
+    hoverColor: 'grey',
     hoverOpacity: '0.85',
     normalizeFunction: 'linear',
     scaleColors: ['grey', 'grey'],
-    selectedColor: 'yellow',
+    selectedColor: '#99CCFF',
     showTooltip: true,
     multiSelectRegion: true,
     });
@@ -33,20 +35,23 @@ $(document).ready(function(){
                 },    
     }).on('onSetSelectValue', function (e, keyword) {
        id1 = keyword.id.toLowerCase();
+       window.visited = $('#vmap').vectorMap('getS');
        if(jQuery.inArray(id1, window.visited)==-1){
-            $('#remove').append("<button id="+id1+ ">" + keyword.key + "</button>")
+            $('#remove').append("<button class = \"btn btn-sm btn-primary zz\" id="+id1+ ">" + keyword.key + "<span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>")
         };
        $('#vmap').vectorMap('select', keyword.id.toLowerCase());
-       
+  
        // $('#remove').text('删除已选择国家(' + window.visited.length + ')');
        $('input').val("");
-       $('button').click(function(){
+       $('.zz').click(function(){
             $('#vmap').vectorMap('deselect',this.id);
-            $(this).remove()})
-
-        window.visited = $('#vmap').vectorMap('getS')
+            $(this).remove();     
+        
     });
 
+
+
+    });       
 
 
 /*    $('#remove').click(function(){
