@@ -1,0 +1,31 @@
+﻿.btn { background: url(../images/btn.png) no-repeat; width: 104px; height: 28px; color: White; border: 0px; }
+#txt, .txt { font-size: 18px; }
+.list_q { background: #dedede; padding: 5px 0px 5px 5px; margin-top: 10px; margin-bottom: 10px; }
+div.graytesthr { padding-top: 10px; margin-bottom: 10px; }
+input, select, bottom, textarea { font-family: 'Microsoft Yahei'; }
+
+tr td{ padding:4px 4px;}
+
+/**** test ****/
+body { background: none; }
+.mianall { height: 100%; left: 0; overflow-x: hidden; position: absolute; top: 0; width: 100%; }
+.header { background-color: #189fd5; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; display: block; height: 60px; left: 0; line-height: 60px; overflow: hidden; padding: 0; position: fixed; top: 0; width: 100%; z-index: 9; }
+.w1000 { margin: 0 auto; width: 600px; }
+.header .logo {float: left; height: 60px; padding: 0 30px; }
+.mainbody { background: #fff; display: block; left: 0; position: absolute; top: 90px; width: 100%; z-index: 2; overflow:hidden; }
+.mainbody.forall { background: #fff none repeat scroll 0 0; }
+.mainbody .innerInfo { height: 100%; overflow: hidden; }
+.mainbody.forall .innerInfo { padding-bottom: 80px; }
+.footer { background: #000 none repeat scroll 0 0; bottom: 0; color: #fff; line-height: 20px; position: absolute; text-align: center; width: 100%; z-index: 9;  padding:10px 0px;}
+
+tr.spe td { background:#0168B5;color:white;}
+tr.spe td .jh { color:#FF6600; font-weight:bold;}
+tr.spe td a.jh { background:#FF6600; padding:5px 10px; color:white; font-size:14px; }
+tr.spe td a.gray { background:#BCBCBC; padding:5px 10px; color:white;  font-weight:bold;font-size:14px;}
+.red { color:#E90A02;}
+.ksxz { text-align:center; line-height:30px; height:50px; font-weight:bold;  margin:2px auto; font-size:18px; border-bottom:0px dotted #ccc; padding-bottom:2px; width:90%;}
+.confirmComment {padding: 10px 20px;}
+/***** page's width limited *****/
+@media (max-width:600px) {
+    .w1000 { width: 100%; padding:10px; }
+}

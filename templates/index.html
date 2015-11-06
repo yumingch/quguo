@@ -3,7 +3,7 @@
  <head> 
   <meta charset="utf-8" /> 
   <title>听说过没见过</title> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.5" />
   <link rel="shortcut icon" href="../static/fav.ico" />
   <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" /> 
   <link href="../static/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
@@ -12,10 +12,9 @@
  <body> 
   <div class="container"> 
    <div class="row"> 
-    <div class="col-sm-6"> 
+    <div class="col-sm-12"> 
      <div class="input-group has-feedback"> 
-      <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span> 
-      <input type="text" class="form-control" id="countrySearch" placeholder="国/省/大洲,点按添加,支持中英文" /> 
+      <input type="text" class="form-control" id="countrySearch" placeholder="搜索国/省/大洲点按添加(支持中英文)" /> 
       <div class="input-group-btn"> 
        <ul class="dropdown-menu dropdown-menu-right" role="menu"> 
        </ul> 
@@ -30,7 +29,8 @@
    <div id="remove" class="col-sm-12"> 
    </div>
 
-   <button type="submit" id="add_new" formmethod="POST">click me</button>  
+   <button type="submit" id="add_new" formmethod="POST">click me</button>
+    <button class="btn btn-primary" id="selected">已选中(0)</button>
   </div>
 
 

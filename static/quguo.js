@@ -11,7 +11,6 @@ $(document).ready(function() {
         enableZoom: false,
         selectedRegions: [],
         hoverColor: 'grey',
-        hoverOpacity: '0.85',
         normalizeFunction: 'linear',
         scaleColors: ['grey', 'grey'],
         selectedColor: '#99CCFF',
@@ -29,7 +28,6 @@ $(document).ready(function() {
         enableZoom: false,
         selectedRegions: [],
         hoverColor: 'grey',
-        hoverOpacity: '0.85',
         normalizeFunction: 'linear',
         scaleColors: ['grey', 'grey'],
         selectedColor: '#99CCFF',
@@ -38,7 +36,7 @@ $(document).ready(function() {
     });
 
     var bsSuggest = $("#countrySearch").bsSuggest({
-        url: "http://ac-tyh9mcmk.clouddn.com/ef7cf1fff7744e6b.json",
+        url: "http://ac-TYH9McMk.clouddn.com/f7d49ff22a2ac60d.json",
         effectiveFields: ["continent", "chs"],
         effectiveFieldsAlias: {
             "continent": "  ",
@@ -64,7 +62,7 @@ $(document).ready(function() {
     }).on('onSetSelectValue',
     function(e, keyword) {
         id1 = keyword.id.toLowerCase();
-        window.visited = $('#vmap').vectorMap('getS').concat($('#vmapcn').vectorMap('getS'));
+
         if (jQuery.inArray(id1, window.visited) == -1) {
             $('#remove').append("<button class = \"btn btn-sm btn-primary zz\" id=" + id1 + ">" + keyword.key + "<span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>")
         };
@@ -74,18 +72,18 @@ $(document).ready(function() {
             $('#vmapcn').vectorMap('select', keyword.id.toLowerCase());
         }
 
-        // $('#remove').text('删除已选择国家(' + window.visited.length + ')');
-        $('input').val("");
+        
+        /* $('input').val("");
         $('.zz').click(function() {
             if (this.id.length == 2){
                 $('#vmap').vectorMap('deselect', this.id);
                 $(this).remove();} else {
                 $('#vmapcn').vectorMap('deselect', this.id);
-                $(this).remove();    
+                $(this).remove();   
                 }
 
-        });
-        window.visited = $('#vmap').vectorMap('getS').concat($('#vmapcn').vectorMap('getS'));
+        });*/
+
     });
 
 });
@@ -98,7 +96,9 @@ $(document).ready(function() {
         };
     }); 
 */
-
+$('#selected').click(function(){
+    $('#remove').toggle('fast')
+})
 $('#add_new').click(function() {
     $.ajax({
         type: "POST",

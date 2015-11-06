@@ -193,8 +193,12 @@
       var code = regionClickEvent.target.id.split('_').pop();
 
       jQuery(params.container).trigger('regionClick.jqvmap', [code, mapData.pathes[code].name]);
-      if (!regionClickEvent.isDefaultPrevented()) {
-        
+ if (!regionClickEvent.isDefaultPrevented()) {
+        if (map.isSelected(code)) {
+          map.deselect(code, targetPath);
+        } else {
+          map.select(code, targetPath);
+        }
       }
     });
 
@@ -620,6 +624,8 @@
         if (this.selectedColor && path) {
           path.currentFillColor = this.selectedColor;
           path.setFill(this.selectedColor);
+          window.visited = $('#vmap').vectorMap('getS').concat($('#vmapcn').vectorMap('getS'));
+          $('#selected').text('已选中(' + window.visited.length + ')');
         }
       }
     },
@@ -632,6 +638,9 @@
         jQuery(this.container).trigger('regionDeselect.jqvmap', [cc]);
         path.currentFillColor = path.getOriginalFill();
         path.setFill(path.getOriginalFill());
+
+        window.visited = $('#vmap').vectorMap('getS').concat($('#vmapcn').vectorMap('getS'));
+        $('#selected').text('已选中(' + window.visited.length + ')');
       } /*else {
         for (var key in this.countries) {
           this.selectedRegions.splice(this.selectedRegions.indexOf(key), 1);
