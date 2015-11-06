@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button type="submit" formmethod="POST">click me</button>
+</body>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	window.haha=['1','ha']
+	$('button').click(function(){
+	$.ajax({
+  type: "POST",
+  contentType: "application/json; charset=utf-8",
+  url: "/add/",
+  data: JSON.stringify({title: window.haha, article: 'test'}),
+  success: function (data) {
+    console.log(data.title);
+  },
+  dataType: "json"
+});
+
+});
+</script>
+</html>

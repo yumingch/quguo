@@ -32,12 +32,12 @@
 	background: none;
 	padding: 5px;
 	color: white;
-	width: 25px;
-	height: 25px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
 	line-height: 10px;
 	text-align: center;
-	font-size: 20px;
+	font-size: 35px;
 }
 .jqvmap-zoomin
 {
@@ -45,7 +45,7 @@
 }
 .jqvmap-zoomout
 {
-	top: 30px;
+	top: 50px;
 }
 .jqvmap-region
 {

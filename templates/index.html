@@ -1,79 +1,45 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>听说过没见过</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <link rel="shortcut icon" href="../static/fav.ico" />
+  <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" /> 
+  <link href="../static/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../static/quguo.css" media="screen" rel="stylesheet" type="text/css" /> 
+ </head> 
+ <body> 
+  <div class="container"> 
+   <div class="row"> 
+    <div class="col-sm-6"> 
+     <div class="input-group has-feedback"> 
+      <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span> 
+      <input type="text" class="form-control" id="countrySearch" placeholder="国/省/大洲,点按添加,支持中英文" /> 
+      <div class="input-group-btn"> 
+       <ul class="dropdown-menu dropdown-menu-right" role="menu"> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="vmap" style="width: 100%; height: 300px;"></div> 
+   <div id="vmapcn" style="width: 100%; height:150px; margin-left: auto; margin-right: auto"></div> 
+  </div> 
+  <div class=" btn-group"> 
+   <div id="remove" class="col-sm-12"> 
+   </div>
 
-<head>
-    <meta charset="utf-8">
-    <title>@听说过没见过</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="../static/quguo.css" media="screen" rel="stylesheet" type="text/css">
-</head>
+   <button type="submit" id="add_new" formmethod="POST">click me</button>  
+  </div>
 
-<body>
-    <div class="container">
-            <div class="row login">
-                <div class="col-sm-12">
-                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">登录</button>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-
-                    <div class="input-group">
-
-                        <input type="text" class="form-control" id="countrySearch" placeholder="输入国家名 点按添加 支持中英文">
-
-                        <div class="input-group-btn">
-                    
-                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            </ul>                            
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        <div id="vmap" style="width: 100%; height: 300px;"></div>
-        </div>
-
-        <div class=" btn-group">
-            <div id="remove" class="col-sm-6">   
-            </div> 
-        </div>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                    <h4 class="modal-title" id="myModalLabel">
-               登录
-            </h4>
-        </div>
-        <div class="modal-body">
-      <form action="" method="post" class="form-signin">
-        <h2 class="form-signin-heading">Login</h2>
- 
-     <input type="text" name="username"  class="input-block-level" placeholder="username">
- 
- 
-        <input type="password" name="password" class="input-block-level" placeholder="password">
-        <button class="btn btn-primary" type="submit" value="Login" >Login</button>
-      </form>
-         </div>
-      </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
-    
-
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="../static/bootstrap-suggest.js"></script>
-    <script src="../static/quguo.js"></script>
-    <script src="../static/jquery.vmap.js"></script>
-    <script src="../static/jquery.vmap.world.js" charset="utf-8"></script>
-</body>
-
+  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script> 
+  <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+  <script src="../static/bootstrap-suggest.js"></script> 
+  <script src="../static/quguo.js"></script> 
+  <script src="../static/jquery.vmap.js"></script> 
+  <script src="../static/jquery.vmap.world.js" charset="utf-8"></script> 
+  <script src="../static/jquery.vmap.china.js" charset="utf-8"></script>  
+ </body>
 </html>
